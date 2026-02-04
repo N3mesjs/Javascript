@@ -68,7 +68,13 @@ console.log(`name: ${name}`);
 
 console.log(`defaultName: ${defaultName}`);
 
-console.log(nullUser ?? fistName ?? user ?? "No name provided");
+/**
+ * Chaining nullish coalescing operator (??)
+ * This is useful when you want to provide multiple fallback values.
+ * it'll return the first truethy value it encounters.
+ */
+
+console.log(nullUser ?? "caccca pui" ?? fistName ?? user ?? "No name provided");
 
 
 
