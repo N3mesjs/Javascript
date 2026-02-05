@@ -52,6 +52,8 @@ if (car == carClone1) {
  * Before if we had a nested object inside the cloned object would have
  * still referenced the same nested object in memory.
  * Now with structuredClone() we have a completely independent copy.
+ * 
+ * DOES NOT WORK IF THERE IS A FUNCTION!
  */
 let piaggio = {
     model: "Piaggio",

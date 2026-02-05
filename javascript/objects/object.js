@@ -21,6 +21,9 @@ let bag = {
     [fruit]: 5, // the name of the property is taken from the variable fruit
 }
 console.log(bag);
+// N.B. The access in this way with the square brackets
+// Only accepts a String or Symbol
+console.log(bag["apple"])
 
 /**
  * 

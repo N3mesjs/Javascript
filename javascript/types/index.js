@@ -76,5 +76,24 @@ console.log(`defaultName: ${defaultName}`);
 
 console.log(nullUser ?? "caccca pui" ?? fistName ?? user ?? "No name provided");
 
+/**
+ * Symbols, a primitive Type,
+ * It is created by using the Symbol method
+ * it accepts a description, and the value
+ * will be an unique value.
+ * 
+ * Why would i need to use it. It is a good
+ * way to hide properties on an object, or 
+ * if i get an object from a library and
+ * don't want to take the risk of unintentionally
+ * overwriting a property we can create a new
+ * property named after a symbol so we know its
+ * unique and safe. 
+ * N.B. it will be invisible in the for..in.. cicle
+ * and also in other methods, so its like an
+ * invisible pocket
+ */
+const id = Symbol("id");
+
 
 
