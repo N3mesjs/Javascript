@@ -40,7 +40,6 @@ userAdmin?.admin?.();
 console.log(user?.size?.height);
 
 // SYMBOL TESTING
-
 let id = Symbol("id");
 console.log(id);
 
