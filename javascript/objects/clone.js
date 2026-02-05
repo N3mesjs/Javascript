@@ -13,7 +13,7 @@
 
 let car = {
     model: "Toyota",
-    year: 2020
+    year: 2020,
 }
 
 let carRef = car; // Reference to the same object
