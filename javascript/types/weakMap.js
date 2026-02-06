@@ -14,6 +14,8 @@ console.log(array);
  * if the reference is cancelled we still have its value inside the
  * map. The WeakMap is very useful for caching purposes or for data 
  * leaking issues.
+ * 
+ * WeakSet are the same! like the keys are objects
  */
 
 let jane = { name: "Jane" };
@@ -23,3 +25,11 @@ let weakMap = new WeakMap();
 weakMap.set(jane, "ok!");
 //jane = null;
 console.log(weakMap)
+
+// EXERCISE:
+
+let messages = [
+  {text: "Hello", from: "John"},
+  {text: "How goes?", from: "John"},
+  {text: "See you soon", from: "Alice"}
+];
