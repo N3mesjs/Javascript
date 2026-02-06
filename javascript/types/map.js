@@ -127,7 +127,7 @@ mapObj.forEach((value, key, map) => {
     console.log(`${value}: ${key}`);
 
     if (key == "name" && value == "Luca"){
-        map.set("isGay", true)
+        map.set("isGay", true);
     }
 })
 

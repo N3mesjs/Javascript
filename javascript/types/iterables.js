@@ -7,6 +7,8 @@
  * has a next() method that returns an object with two properties:
  * - done: a boolean that indicates whether the iteration is complete
  * - value: the current value of the iteration
+ * 
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_generators
  */
 
 let range = {
