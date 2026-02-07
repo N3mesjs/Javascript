@@ -25,11 +25,3 @@ let weakMap = new WeakMap();
 weakMap.set(jane, "ok!");
 //jane = null;
 console.log(weakMap)
-
-// EXERCISE:
-
-let messages = [
-  {text: "Hello", from: "John"},
-  {text: "How goes?", from: "John"},
-  {text: "See you soon", from: "Alice"}
-];
