@@ -5,6 +5,8 @@
  * object itself.
  */
 
+// PRETTY IMPORTANT ALSO SEE ../functions/call.js, for concepts regard this keyword
+
 /**
  * In this object we define a method `Hi` that uses `this` to access
  * notice that we are creating the function using the shorthand method syntax.
@@ -28,7 +30,7 @@ const person = {
     ref: this // N.B.: Here, `this` does not refer to the `person` object
               // because the object is not fully constructed yet. so it will reference
               // the global object (or be undefined in strict mode). or if the object
-                // is defined inside a function, it will refer to the context of that function.
+              // is defined inside a function, it will refer to the context of that function.
 }
 
 person.Hi();
