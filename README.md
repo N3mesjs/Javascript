@@ -10,4 +10,4 @@ BUT... i am not yet a master in js, and i would like to understand much more in 
 
 All the files and lessons are made thanks to https://javascript.info the best online book i know to learn the language and its controversies!
 
-Later on i will also review typescript and nodejs, do i know them yeah, do i know them in detail, meh..
+## Later on i will also review typescript and nodejs, do i know them yeah, do i know them in detail, meh..
