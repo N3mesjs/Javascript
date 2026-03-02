@@ -1,4 +1,5 @@
 # Explainatory file of the F.prototype
+## SEE https://javascript.info/function-prototype
 
 by default any function has the prototype property
 
@@ -36,3 +37,14 @@ of the constructor
 Basically it will clone every function or variable inside the constructor inside
 the child object, but it will inherith the functions inside the prototype so 
 this can lead manage the memory efficiency.
+
+---
+
+NOTE THIS IS VERY IMPORTANT:
+    1. The .prototype is ONLY for functions (specifically Constructor Functions).
+    Normal objects don't have it.
+    2. EXCEPTION: Arrow Functions (() => {}) DO NOT have a .prototype property
+    because they cannot be used with 'new'.
+    3. WARNING: When you overwrite Rabbit.prototype = animal, you lose the 
+    default "constructor" property. The new objects won't know they were 
+    created by Rabbit anymore unless you manually re-add it!
