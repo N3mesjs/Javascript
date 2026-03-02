@@ -30,13 +30,12 @@ defined it also creates an object that has the property of that constructor.
 
 So we have an horrizontal arrow between the constructor function and the
 prototype, because its his property and the child object created with that
-constructor function has as [[Prototype]] the prototype property but because
-it has the constructor property it will create the object with the properties
-of the constructor
+constructor function has as [[Prototype]] the prototype property and the constructor
+property is needed to know where we created that child from
 
-Basically it will clone every function or variable inside the constructor inside
-the child object, but it will inherith the functions inside the prototype so 
+Basically when we invoke the new keyword of a constructor function it will execute every function or variable inside the constructor inside the child object with key and values, but it will inherith the functions inside the prototype so 
 this can lead manage the memory efficiency.
+
 
 ---
 
