@@ -1,80 +1,62 @@
-'use strict';
+class User {
+    company = "Tech Company";
 
-// Exercise transform the clock function into a class
-// function Clock({ template }) {
-  
-//     let timer;
-  
-//     function render() {
-//       let date = new Date();
-  
-//       let hours = date.getHours();
-//       if (hours < 10) hours = '0' + hours;
-  
-//       let mins = date.getMinutes();
-//       if (mins < 10) mins = '0' + mins;
-  
-//       let secs = date.getSeconds();
-//       if (secs < 10) secs = '0' + secs;
-  
-//       let output = template
-//         .replace('h', hours)
-//         .replace('m', mins)
-//         .replace('s', secs);
-  
-//       console.log(output);
-//     }
-  
-//     this.stop = function() {
-//       clearInterval(timer);
-//     };
-  
-//     this.start = function() {
-//       render();
-//       timer = setInterval(render, 1000);
-//     };
-  
-//   }
-  
-//   let clock = new Clock({template: 'h:m:s'});
-//   clock.start();
+    constructor(name, age, email) {
+        this.name = name;
+        this.age = age;
+        this.email = email;
+    }
 
-class Clock {
-  
-    constructor({ template }) {
-        this.template = template;
+    sayHello() {
+        console.log(`Hello, my name is ${this.name} and I work at ${this.company}.`);
     }
-  
-    render() {
-      let date = new Date();
-  
-      let hours = date.getHours();
-      if (hours < 10) hours = '0' + hours;
-  
-      let mins = date.getMinutes();
-      if (mins < 10) mins = '0' + mins;
-  
-      let secs = date.getSeconds();
-      if (secs < 10) secs = '0' + secs;
-  
-      let output = this.template
-        .replace('h', hours)
-        .replace('m', mins)
-        .replace('s', secs);
-  
-      console.log(output);
+
+    ["greet" + "User"]() {
+        console.log(`Welcome, ${this.name}!`);
     }
-  
-    stop() {
-      clearInterval(this.timer);
-    };
-  
-    start() {
-      this.render();
-      this.timer = setInterval(() => this.render(), 1000);
-    };
-  
-  }
-  
-  let clock = new Clock({template: 'h:m:s'});
-  clock.start();
+
+    get name() {
+        return this._name; //Here we are using the underscore
+                           //to prevent an infinte loop of the getter
+                           //calling itself when we try to access 
+                           // the name property.
+                           //Also it is a convention to modify internal
+                           //variables with an underscore to 
+                           // indicate that they are private 
+                           // and should not be accessed directly.
+    }
+
+    set name(value) {
+        this._name = value;
+    }
+}
+
+class Admin extends User {
+    constructor(name, age, email, role) {
+        super(name, age, email);
+        this.role = role;
+    }
+    
+    fireUser(user) {
+        console.log(`${user.name} has been fired by ${this.name}.`);
+    }
+}
+
+class Guest extends User {
+    constructor(name, age, email, visitReason) {
+        super(name, age, email);
+        this.visitReason = visitReason;
+    }
+    
+    requestAccess() {
+        console.log(`${this.name} is requesting access for ${this.visitReason}.`);
+    }
+}
+
+let user1 = new User('Alice', 30, 'alice.cice@gmail.com');
+
+console.log(user1.name); // Alice
+user1.name = 'Bob';
+console.log(user1.name); // Bob
+
+user1.greetUser(); // Welcome, Bob!
