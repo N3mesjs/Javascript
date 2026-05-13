@@ -2,12 +2,14 @@
  * 
  * @param {string} name
  * @returns {object} {name: name}
+ * @returns {object} {this: name}
  * 
  * This is an example on how object constructor works
  * Basically, the function when its called with the new keyword
  * it creates an object, so on the first line there is an 
  * implicit: this = {}, so the this in the scope is an object
- * and it assigns name to the property name
+ * and it assigns name to the property name, and then the function
+ * returns it
  */
 
 function User(name) {
