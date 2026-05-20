@@ -26,6 +26,10 @@
  * if dealing with this losing, when function is
  * called inside a callback!
  * 
+ * Its a method that returns the functions
+ * with the this set to the provided value.
+ * Its like a mofification made now, for the future.
+ * 
  * See https://javascript.info/bind
  */
 
