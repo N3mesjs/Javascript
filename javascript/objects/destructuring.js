@@ -48,7 +48,6 @@ let preflightHeader = {
     ...options,
 };
 
-const array = [1,2,3,4,5,6];
 const newAr = [...array, 7,8];
 console.log(array);
 console.log(...array);
