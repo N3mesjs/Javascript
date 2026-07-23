@@ -10,7 +10,7 @@ let animal = {
 }
 
 function Rabbit(name){
-    this.name = name;
+    this.name = name
 }
 
 let rat = {
@@ -25,6 +25,7 @@ Rabbit.prototype = animal
 const bunny = new Rabbit('Bugs Bunny')
 
 bunny.eat();
+bunny.hi();
 console.log(Object.getOwnPropertyDescriptors(bunny));
 console.dir(bunny);
 console.dir(rat);
