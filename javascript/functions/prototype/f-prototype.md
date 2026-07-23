@@ -36,6 +36,31 @@ property is needed to know where we created that child from
 Basically when we invoke the new keyword of a constructor function it will execute every function or variable inside the constructor inside the child object with key and values, but it will inherith the functions inside the prototype so 
 this can lead manage the memory efficiency.
 
+Here there is a little snippset:
+
+```
+let animal = {
+  eats: true
+};
+
+function Rabbit(name) {
+  this.name = name;
+}
+
+Rabbit.prototype = animal;
+
+let rabbit = new Rabbit("White Rabbit"); //  rabbit.__proto__ == animal
+
+alert( rabbit.eats ); // true
+```
+
+Important thing to notice, we use the .prototype property to assing the inheritance, then
+we have and instance of rabbit created with the constructor function there, we have an implicit
+assing of rabbit.\__proto__ to animal! 
+
+We lose the constructor this way! if we will need it its a good thing to manually add it so the prototype
+will also contain the constructor!
+
 
 ---
 
