@@ -19,9 +19,9 @@ class User {
     static origin = 'italy';
 
     constructor({name, surname, age}) {
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
+        this._name = name;
+        this._surname = surname;
+        this._age = age;
     }
     static sayHi() {
         console.log('Hi man!');
@@ -29,15 +29,47 @@ class User {
     sayHi() {
         console.log(`Hi, I am ${this.name} ${this.surname} and I am ${this.age} years old!`);
     }
+
+    get name() {
+        return this._name;
+    }
+
+    set name(value) {
+        this._name = value;
+    }
+
+    get surname() {
+        return this._surname;
+    }
+
+    set surname(value) {
+        this._surname = value;
+    }
+
+    get age() {
+        return this._age;
+    }
+
+    set age(value) {
+        this._age = value;
+    }
 }
 
 class Admin extends User {
     constructor({name, surname, age, permissions}) {
         super({name, surname, age});
-        this.permissions = permissions;
+        this._permissions = permissions;
     }
     fireSomeone(){
         console.log('You are fired!');
+    }
+
+    get permissions() {
+        return this._permissions;
+    }
+
+    set permissions(value) {
+        this._permissions = value;
     }
 }
 
