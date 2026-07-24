@@ -3,13 +3,16 @@
  * Each .then() returns a new Promise, with the result of the 
  * previous return of the .then(), so it implies that every .then() return
  * a new Promise even without explicitly returning a Promise object.
+ * 
+ * In the chain if you get an error it will be managed to the nearest error
+ * handler, so the nearest .then() with a second argument or the nearest .catch() will handle the error.
  */
 
 let promise = new Promise((res, rej) => {
     setTimeout(() => res(1), 1000);
 }).then(result => {
     console.log(result);
-    return result * 2;
+    return result * 2; // This is like: return new Promise((res, rej) => res(result * 2));
 }).then(result => {
     console.log(result);
     return result * 2;

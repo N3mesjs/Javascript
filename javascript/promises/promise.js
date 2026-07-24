@@ -11,6 +11,8 @@ let myPromise = new Promise((resolve, reject) => {
   const operazioneRiuscita = false;
 
   setTimeout(() => {
+    //throw new Error("Errore nella promise!"); // This will throw an error and the promise will be rejected
+                                                // so its like a reject().
     if (operazioneRiuscita) {
       resolve("Operazione riuscita!");
     } else {
@@ -34,8 +36,11 @@ let myPromise = new Promise((resolve, reject) => {
  * 4. Promises solve "Callback Hell" by flattening asynchronous control flow into a linear, chainable structure.
  * 5. Always pass an instance of the `Error` object to `reject()`. This captures the call stack (`error.stack`) 
  *    making debugging significantly easier.
+ * 6. Inside the executor function, everything is wrapped in a try/catch block. If an error is thrown, 
+ *    the promise is automatically rejected with that error. It will later on be caught by the nearest .catch() in the chain.
  */
 
 myPromise
 .then(result => console.log(result), error => console.log(error.message))
 .catch(error => console.log(error));
+console.log('Promise state:', myPromise); // This will log the promise state as pending, fulfilled, or rejected depending on the outcome of the promise.
