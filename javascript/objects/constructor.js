@@ -13,7 +13,9 @@
  */
 
 function User(name) {
+    // this = {}
     this.name = name
+    // return this
 }
 
 let userAdmin = {
