@@ -2,6 +2,16 @@ function heavyWokr(x) {
     return x * x;
 }
 
+let worker = {
+    name: "John",
+    surname: "Marston",
+
+    heavyWork(x) {
+        console.log(`${this.name} ${this.surname} is working with ${x}`);
+        return x * x;
+    }
+}
+
 function cachingDecorator(fn) {
     let cache = new Map();
 
@@ -16,7 +26,7 @@ function cachingDecorator(fn) {
     };
 }
 
-heavyWokr = cachingDecorator(heavyWokr);
-heavyWokr(5);
-heavyWokr(5);
+worker.heavyWork = cachingDecorator(worker.heavyWork);
+worker.heavyWork(5);
+worker.heavyWork(5);
 
