@@ -20,7 +20,8 @@ function cachingDecorator(fn) {
             return cache.get(x);
         }
 
-        let result = fn(x);
+        let result = fn.call(this, x);
+        //console.log(this)
         cache.set(x, result);
         return result;
     };
